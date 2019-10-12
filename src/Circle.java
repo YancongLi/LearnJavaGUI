@@ -1,7 +1,10 @@
+import java.awt.*;
+
 public class Circle {
     public int x, y;
     private int r;
     public int vx, vy;
+    public  boolean isFilled = false;
 
     public Circle(int x, int y, int r, int vx, int vy) {
         this.x = x;
@@ -39,5 +42,9 @@ public class Circle {
             y = maxY - r;
             vy = -vy;
         }
+    }
+
+    public boolean contains(Point point) {
+        return Math.pow((x - point.x), 2) + Math.pow((y - point.y), 2) <= Math.pow(r, 2);
     }
 }

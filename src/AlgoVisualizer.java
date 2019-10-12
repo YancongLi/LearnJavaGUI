@@ -1,6 +1,8 @@
 import java.awt.*;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class AlgoVisualizer {//The controller in MVC
@@ -24,6 +26,7 @@ public class AlgoVisualizer {//The controller in MVC
         EventQueue.invokeLater(() -> {
             this.frame = new AlgoFrame("Welcome", sceneWidth, sceneHeight);
             this.frame.addKeyListener(new AlgoKeyListener());
+            this.frame.addMouseListener(new AlgoMouseListener());
 
             new Thread(() -> {
                 run(sceneWidth, sceneHeight);
@@ -50,6 +53,20 @@ public class AlgoVisualizer {//The controller in MVC
         public void keyReleased(KeyEvent e) {
             if (e.getKeyChar() == ' ') {
                 isAnimated = !isAnimated;
+            }
+        }
+    }
+
+    private class AlgoMouseListener extends MouseAdapter{
+        @Override
+        public void mousePressed(MouseEvent e) {
+            int menuBarHeight = frame.getBounds().height- frame.getCanvasHeight();
+            e.translatePoint(0, -menuBarHeight);
+//            System.out.println(e.getPoint());
+            for (Circle circle: circles) {
+                if (circle.contains(e.getPoint())) {
+                    circle.isFilled = !circle.isFilled;
+                }
             }
         }
     }
