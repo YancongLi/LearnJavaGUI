@@ -2,7 +2,7 @@ import java.awt.*;
 
 
 public class AlgoVisualizer {//The controller in MVC
-    
+
     private Circle[] circles;//The model/data in MVC
     private AlgoFrame frame;//The view in MVC
 
