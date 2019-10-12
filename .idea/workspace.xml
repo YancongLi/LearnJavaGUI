@@ -2,10 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b63b7632-eaee-4b7c-883d-5e34397abf61" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/AlgoVisualizer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/JavaGUI/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/JavaGUI/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AlgoVisualizer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AlgoVisualizer.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -47,9 +45,17 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.AlgoVisualizer">
     <configuration default="true" type="Applet">
       <option name="POLICY_FILE" value="$APPLICATION_HOME_DIR$/bin/appletviewer.policy" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AlgoVisualizer" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AlgoVisualizer" />
+      <module name="JavaGUI" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -97,6 +103,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.AlgoVisualizer" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>
@@ -113,7 +120,7 @@
       <updated>1569822019580</updated>
       <workItem from="1569822026161" duration="6288000" />
       <workItem from="1570908948679" duration="2593000" />
-      <workItem from="1570911690327" duration="1101000" />
+      <workItem from="1570911690327" duration="1807000" />
     </task>
     <servers />
   </component>

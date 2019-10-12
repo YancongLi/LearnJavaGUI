@@ -1,10 +1,14 @@
 import java.awt.*;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 
 public class AlgoVisualizer {//The controller in MVC
 
     private Circle[] circles;//The model/data in MVC
     private AlgoFrame frame;//The view in MVC
+
+    private boolean isAnimated = true;
 
     public AlgoVisualizer(int sceneWidth, int sceneHeight, int N) {
         this.circles = new Circle[N];
@@ -19,6 +23,7 @@ public class AlgoVisualizer {//The controller in MVC
 
         EventQueue.invokeLater(() -> {
             this.frame = new AlgoFrame("Welcome", sceneWidth, sceneHeight);
+            this.frame.addKeyListener(new AlgoKeyListener());
 
             new Thread(() -> {
                 run(sceneWidth, sceneHeight);
@@ -32,9 +37,28 @@ public class AlgoVisualizer {//The controller in MVC
             frame.render(circles);
             AlgoVisHelper.pause(20);
             //update data:
-            for (Circle circle: circles) {
-                circle.move(0, 0, sceneWidth, sceneHeight);
+            if (isAnimated) {
+                for (Circle circle: circles) {
+                    circle.move(0, 0, sceneWidth, sceneHeight);
+                }
             }
         }
+    }
+
+    private class AlgoKeyListener extends KeyAdapter {
+        @Override
+        public void keyReleased(KeyEvent e) {
+            if (e.getKeyChar() == ' ') {
+                isAnimated = !isAnimated;
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        int sceneWidth = 800;
+        int sceneHeight = 800;
+        int N = 10;
+        AlgoVisualizer algoVisualizer = new AlgoVisualizer(sceneWidth, sceneHeight, N);
     }
 }
